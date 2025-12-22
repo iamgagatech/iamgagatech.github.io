@@ -1,0 +1,138 @@
+.navbarSC {
+  box-shadow: 2px 2px 20px 0px;
+  transition: ease-in;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.brandName {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+
+.brandLogo {
+  width: 150px;
+  width: clamp(4rem, 4vw, 5.9rem);
+}
+
+.nav-itemGrowing {
+  font-size: clamp(1.3rem, 4vw, 1.5rem);
+}
+
+.cool-btn {
+  position: relative;
+  padding: clamp(0.875rem, 2.5vw, 1.25rem) clamp(2rem, 5vw, 3rem);
+  font-size: clamp(0.9375rem, 1.8vw, 1.0rem);
+  font-weight: 600;
+  border: clamp(1px, 0.15vw, 2px) solid transparent;
+  border-radius: clamp(0.625rem, 1.2vw, 0.875rem);
+  background: linear-gradient(135deg, #378dfc 0%, #5b62f4 100%);
+  color: #f0f5fa;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.9375rem, 2vw, 1.25rem) rgba(55, 141, 252, 0.4), 0 clamp(0.125rem, 0.25vw, 0.25rem) clamp(0.5rem, 1vw, 0.75rem) rgba(91, 98, 244, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  letter-spacing: clamp(0.02em, 0.05vw, 0.03em);
+}
+
+.cool-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(91, 98, 244, 0.3) 0%, rgba(55, 141, 252, 0.1) 100%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.cool-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient( 90deg, transparent, rgba(240, 245, 250, 0.2), transparent );
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.cool-btn:hover {
+  transform: translateY(clamp(-0.125rem, -0.3vw, -0.1875rem)) scale(1.08);
+  box-shadow: 0 clamp(0.75rem, 1.5vw, 2.1875rem) clamp(2.1875rem, 4vw, 3rem) rgba(55, 141, 252, 0.6), 0 clamp(0.375rem, 0.75vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.875rem) rgba(91, 98, 244, 0.4), 0 0 clamp(1.875rem, 3vw, 2.5rem) rgba(55, 141, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #4a9aff 0%, #6d75ff 100%);
+  border-color: rgba(240, 245, 250, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 clamp(0.5rem, 1vw, 0.625rem) rgba(0, 0, 0, 0.3);
+}
+
+.cool-btn:hover::before {
+  width: clamp(18.75rem, 50vw, 25rem);
+  height: clamp(18.75rem, 50vw, 25rem);
+}
+
+.cool-btn:hover::after {
+  left: 100%;
+}
+
+.cool-btn:active {
+  transform: translateY(clamp(-0.0625rem, -0.1vw, -0.0625rem)) scale(1.02);
+  box-shadow: 0 clamp(0.375rem, 0.75vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.875rem) rgba(55, 141, 252, 0.5), 0 clamp(0.1875rem, 0.375vw, 0.625rem) clamp(0.625rem, 1.25vw, 0.9375rem) rgba(91, 98, 244, 0.3), inset 0 clamp(0.125rem, 0.25vw, 0.25rem) clamp(0.5rem, 1vw, 0.75rem) rgba(33, 37, 41, 0.3);
+  background: linear-gradient(135deg, #2e75d9 0%, #4850d0 100%);
+  color: #f0f5fa;
+  text-shadow: 0 clamp(0.0625rem, 0.1vw, 0.125rem) clamp(0.1875rem, 0.3vw, 0.25rem) rgba(0, 0, 0, 0.4);
+}
+
+.cool-btn:active::before {
+  width: clamp(21.875rem, 60vw, 31.25rem);
+  height: clamp(21.875rem, 60vw, 31.25rem);
+  background: radial-gradient(circle, rgba(33, 37, 41, 0.2) 0%, transparent 70%);
+  transition: width 0.15s ease, height 0.15s ease;
+}
+
+.cool-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 clamp(0.125rem, 0.3vw, 0.1875rem) rgba(55, 141, 252, 0.3), 0 clamp(0.75rem, 1.5vw, 2.1875rem) clamp(2.1875rem, 4vw, 3rem) rgba(55, 141, 252, 0.6);
+}
+
+/* Pulse animation on load */
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.9375rem, 2vw, 1.25rem) rgba(55, 141, 252, 0.4);
+  }
+  50% {
+    box-shadow: 0 clamp(0.25rem, 0.5vw, 0.5rem) clamp(1.5625rem, 3vw, 2rem) rgba(55, 141, 252, 0.6);
+  }
+}
+
+.cool-btn {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cool-btn:hover {
+  animation: none;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  width: max(80%, 90px);
+  gap: 1rem;
+}
+
+.skill-tag {
+  padding: 0.7rem 1.5rem;
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-info);
+  border-radius: 25px;
+  color: var(--bs-primary);
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
