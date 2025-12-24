@@ -36,7 +36,8 @@
   font-size: 48px;
   line-height: 1;
   color: #e43c5c;
-  transition: all 0.3s ease-in-out;
+  /*transition: all 0.3s ease-in-out;*/
+  margin-bottom: 15px;
 }
 
 .services .title {
@@ -44,10 +45,6 @@
   /*margin-bottom: 15px;*/
   font-size: 1.2em;
   text-decoration: line-through wavy var(--bs-primary) 1px;
-}
-
-.services .title a {
-  color: #111;
 }
 
 .services .description {
@@ -63,14 +60,11 @@
 
 .services {
   padding-bottom: 30px;
+  scroll-margin-top: 130px;
 }
 
 .services .icon-box:hover .icon i {
   color: var(--bs-body-bg);
-}
-
-.pSubHeading {
-  width: max(60%, 280px);
 }
 
 .subTitle {
