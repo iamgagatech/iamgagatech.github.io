@@ -79,3 +79,31 @@
   transform: translateY(-3px);
 }
 
+@media (width <= 390px) {
+  .heroImage {
+    height: 244px;
+  }
+}
+
+@media (width <= 767px) {
+  .heroImage {
+    height: 250px;
+  }
+}
+
+@media (390px <= width <= 432px) {
+  .heroImage {
+    height: 370px;
+  }
+}
+
+.chart {
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+.ToolsCol {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
