@@ -1,7 +1,7 @@
 .navbarSC {
-  box-shadow: 2px 2px 20px 0px;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 2px 1px 8px 0px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .brandName {
@@ -24,8 +24,8 @@
   font-weight: 600;
   border: clamp(1px, 0.15vw, 2px) solid transparent;
   border-radius: clamp(0.625rem, 1.2vw, 0.875rem);
-  background: linear-gradient(135deg, #378dfc 0%, #5b62f4 100%);
-  color: #f0f5fa;
+  background: linear-gradient(135deg, rgba(55,141,252,0.67) 0%, rgba(91,98,244,0.92) 100%);
+  color: var(--bs-light);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,8 +62,8 @@
 }
 
 .cool-btn:hover {
-  transform: translateY(clamp(-0.125rem, -0.3vw, -0.1875rem)) scale(1.08);
-  box-shadow: 0 clamp(0.75rem, 1.5vw, 2.1875rem) clamp(2.1875rem, 4vw, 3rem) rgba(55, 141, 252, 0.6), 0 clamp(0.375rem, 0.75vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.875rem) rgba(91, 98, 244, 0.4), 0 0 clamp(1.875rem, 3vw, 2.5rem) rgba(55, 141, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(clamp(-0.125rem, -0.3vw, -0.1875rem)) scale(1.05);
+  box-shadow: 0 clamp(0.75rem, 1.5vw, 2.1875rem) clamp(2.1875rem, 4vw, 3rem) rgba(55,141,252,0.1), 0 clamp(0.375rem, 0.75vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.875rem) rgba(91, 98, 244, 0.4), 0 0 clamp(1.875rem, 3vw, 2.5rem) rgba(55, 141, 252, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   background: linear-gradient(135deg, #4a9aff 0%, #6d75ff 100%);
   border-color: rgba(240, 245, 250, 0.3);
   color: #ffffff;
@@ -178,5 +178,173 @@
 
 .imageProjectsH {
   height: 200px;
+}
+
+/* This creates a light 'shimmer' that runs across your logo every 3 seconds */
+
+.logo-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: var(--bs-primary);
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+  20% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@media (min-width: 992px) {
+  .theme-switcher-md {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .theme-switcher-lg {
+    display: none;
+  }
+}
+
+p {
+  font-family: 'Nunito';
+}
+
+:root {
+  --primary-hex: #378dfc;
+  --primary-glow: rgba(55, 141, 252, 0.4);
+}
+
+/* Base Reset & Physics */
+
+.magnetic-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.magnetic-content {
+  display: block;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+}
+
+/* Interaction States */
+
+/* =========================
+   SHOCK CTA BUTTON
+========================= */
+
+.cta-shock {
+  --glow: rgba(var(--bs-primary-rgb), 0.55);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .85rem 1.4rem;
+  font-weight: 800;
+  font-size: .95rem;
+  letter-spacing: .02em;
+  color: var(--bs-body-bg);
+  background: linear-gradient( 135deg, var(--bs-primary), color-mix(in srgb, var(--bs-primary) 70%, black 30%) );
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15), inset 0 0 0 1px rgba(255,255,255,.15);
+  transition: transform .25s cubic-bezier(.2,.9,.3,1), box-shadow .25s ease, background .55s ease;
+  isolation: isolate;
+}
+
+/* Arrow */
+
+.cta-shock .cta-arrow {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .25s cubic-bezier(.2,.9,.3,1);
+  font-size: 1.05rem;
+}
+
+/* Glow ring */
+
+.cta-shock::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle, var(--glow), transparent 60%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s ease;
+}
+
+/* Hover (pointer devices only) */
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-shock:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.2);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-shock:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-shock:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* Active */
+
+.cta-shock:active {
+  transform: translateY(0) scale(.98);
+  color: var(--bs-info-text-emphasis);
+}
+
+/* Focus (keyboard) */
+
+.cta-shock:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), .35), 0 18px 40px rgba(0,0,0,.25);
+}
+
+/* Mobile tuning */
+
+@media (max-width: 575px) {
+  .cta-shock {
+    padding: .75rem 1.2rem;
+    font-size: .9rem;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-shock, .cta-shock::after, .cta-arrow {
+    transition: none;
+  }
 }
 

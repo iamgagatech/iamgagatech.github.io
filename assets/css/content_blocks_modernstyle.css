@@ -1,47 +1,75 @@
 .features-boxed {
+  background-color: #eef4f7;
   background: url("../../assets/img/bg-c-02.png") right/ 350px no-repeat;
-  font-family: Poppins, sans-serif!important;
-  /*color: var(--bs-primary);*/
-  background-color: var(--bs-focus-ring-color);
-}
-
-.features-boxed p {
-  color: var(--bs-emphasis-color);
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .features-boxed .features {
   padding: 50px 0;
 }
 
+/* Flexbox fix for equal height columns */
+
 .features-boxed .item {
-  text-align: center;
+  display: flex;
 }
 
 .features-boxed .item .box {
+  background-color: #ffffff;
   text-align: center;
-  padding: 30px;
-  background-image: linear-gradient(to bottom, var(--bs-tertiary-color) 0%, var(--bs-gray-500) 100%);
-  margin-bottom: 30px;
+  padding: 40px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  border-bottom: 4px solid transparent;
 }
+
+/* Hover Effect: Lift up and show brand color at bottom */
+
+.features-boxed .item .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--bs-focus-ring-color);
+  cursor: pointer;
+}
+
+/* Icon Styling */
 
 .features-boxed .item .icon {
-  font-size: 60px;
-  color: var(--bs-dark);
-  margin-top: 20px;
-  margin-bottom: 35px;
+  font-size: 48px;
+  color: var(--bs-primary);
+  margin-bottom: 15px;
+  display: inline-block;
 }
+
+/* The Big Stats Number */
+
+.features-boxed .item .stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--bs-dark);
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+/* The Label (e.g., Projects Completed) */
 
 .features-boxed .item .name {
-  color: #ededed;
-  font-weight: bold;
-  font-size: clamp(1rem, 5vw, 1.5rem);
-  margin-bottom: 8px;
-  margin-top: 0;
+  color: #555;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* The Description Paragraph */
+
 .features-boxed .item .description {
-  font-size: clamp(1rem, 5vw, 1.5rem);
-  margin-top: 15px;
-  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #777;
+  margin-bottom: 0;
 }
 
